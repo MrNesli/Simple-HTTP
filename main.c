@@ -1,5 +1,9 @@
+#include <netinet/in.h>
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <unistd.h>
 /* https://www.dataprovider.com/blog/tech/internet-basics-series-3-http-requests-explained/
  *
  * Client - program that established the connection for the purpose of sending requests.
@@ -46,29 +50,13 @@
  *
  *  https://http.dev/0.9
  *  https://www.dataprovider.com/blog/tech/internet-basics-series-3-http-requests-explained/
- *
+ *  https://www.geeksforgeeks.org/socket-programming-cc/  
  *
  * */
 
-
-
-
-// #include <stdlib.h>
-
-void send_request() {
-  char headers[][] = {
-    "Content-Type: application/json",
-    "Hello world",
-    "Testing"
-  };
-
-  for (int i = 0; i < strlen(headers); i++) {
-    printf("Line: %s\n", headers[i]);
-  }
-}
-
 int main() {
-  printf("Hello world\n");
-  send_request();
+  char buffer[1024] = {0};
+
+
   return 0;
 }
